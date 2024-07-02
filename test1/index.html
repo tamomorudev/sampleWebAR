@@ -123,7 +123,7 @@
                 
                 document.getElementById("startWebcamDiv").style.display = "none";
 
-                createUnityInstance(document.querySelector("#unity-canvas"), {
+                createUnityInstance(document.querySelector("#unity-canvas"), config, (progress) => {
                     dataUrl: "Build/test1.data",
                     frameworkUrl: "Build/test1.framework.js",
                     codeUrl: "Build/test1.wasm",
