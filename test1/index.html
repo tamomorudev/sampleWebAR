@@ -101,25 +101,12 @@
 
         function StartCamera() {
                 canvas.style.width = window.innerWidth + "px";
-                canvas.style.height = window.innerHeight + "px";
+            canvas.style.height = window.innerHeight + "px";
 
 
-                // パラメータ引き継ぎ処理追加
-                var buildUrl = "Build";
-                var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
-                var config = {
-                    dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
-                    frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
-                    codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
-                    streamingAssetsUrl: "StreamingAssets",
-                    companyName: "{{{ COMPANY_NAME }}}",
-                    productName: "{{{ PRODUCT_NAME }}}",
-                    productVersion: "{{{ PRODUCT_VERSION }}}",
-                };
-                
                 document.getElementById("startWebcamDiv").style.display = "none";
 
-                createUnityInstance(document.querySelector("#unity-canvas"), config, {
+                createUnityInstance(document.querySelector("#unity-canvas"), {
                     dataUrl: "Build/test1.data",
                     frameworkUrl: "Build/test1.framework.js",
                     codeUrl: "Build/test1.wasm",
