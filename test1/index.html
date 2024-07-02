@@ -104,6 +104,20 @@
                 canvas.style.width = window.innerWidth + "px";
             canvas.style.height = window.innerHeight + "px";
 
+            // moritra add
+            var buildUrl = "Build";
+            var loaderUrl = buildUrl + "/Build.loader.js";
+            var config = {
+                dataUrl: buildUrl + "/Build.data",
+                frameworkUrl: buildUrl + "/Build.framework.js",
+                codeUrl: buildUrl + "/Build.wasm",
+                streamingAssetsUrl: "StreamingAssets",
+                companyName: "YourCompanyName",
+                productName: "YourProductName",
+                productVersion: "1.0",
+            };
+
+            console.log(config);
 
                 document.getElementById("startWebcamDiv").style.display = "none";
 
