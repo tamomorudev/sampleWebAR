@@ -95,24 +95,6 @@
             var progressBarFull = document.querySelector("#unity-progress-bar-full");
 
 
-
-        // パラメータ引き継ぎ処理追加
-        var buildUrl = "Build";
-        var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
-        var config = {
-            dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
-            frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
-            codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
-            streamingAssetsUrl: "StreamingAssets",
-            companyName: "{{{ COMPANY_NAME }}}",
-            productName: "{{{ PRODUCT_NAME }}}",
-            productVersion: "{{{ PRODUCT_VERSION }}}",
-        };
-
-
-
-
-
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
                 container.className = "unity-mobile";
             }
@@ -120,20 +102,6 @@
             function StartCamera() {
                 canvas.style.width = window.innerWidth + "px";
                 canvas.style.height = window.innerHeight + "px";
-
-
-                // パラメータ引き継ぎ処理追加
-                //var buildUrl = "Build";
-                //var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
-                //var config = {
-                //    dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
-                //    frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
-                //    codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
-                //    streamingAssetsUrl: "StreamingAssets",
-                //    companyName: "{{{ COMPANY_NAME }}}",
-                //    productName: "{{{ PRODUCT_NAME }}}",
-                //    productVersion: "{{{ PRODUCT_VERSION }}}",
-                //};
                 
                 document.getElementById("startWebcamDiv").style.display = "none";
 
@@ -183,19 +151,6 @@
                 document.getElementById("startWebcamManuallyDiv").style.display = "none";
                 iTracker.VIDEO.play()
             }
-
-
-
-
-        // Unityインスタンスを初期化
-        createUnityInstance(document.querySelector("#unity-canvas"), config, (progress) => {
-            document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-            onUnityLoaded(unityInstance);
-        }).catch((message) => {
-            alert(message);
-        });
-
     </script>
 </body>
 </html>
