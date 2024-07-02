@@ -59,6 +59,7 @@
 
         // Unityインスタンスが準備できたら呼び出される関数
         function onUnityLoaded(unityInstanceParam) {
+            console.log("located onUnityLoaded");
             unityInstance = unityInstanceParam;
             sendParamsToUnity();
         }
@@ -143,9 +144,6 @@
 
                     // これも追加
                     onUnityLoaded(unityInstance);
-
-
-                    console.log("OHOHOHO");
                 });
 
                 loadingBar.style.display = "block";
